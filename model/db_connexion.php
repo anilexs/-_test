@@ -35,6 +35,7 @@ if(isset($_POST['connexion'] )){
             $_SESSION["role"] = $utilisateur['role'];
             $_SESSION["login_nam"] = $utilisateur['login_nam'];
             $_SESSION["sold"] = $utilisateur['sold'];
+            $_SESSION["img"] = $utilisateur['img'];
 
             // creation du cookie qui va stocker l'identifiant de l'utilisateur pour permetre une meilleure experience
             // setcookie("id_user", $utilisateur['id_membre'], time() + 3600, '/', "localhost", false, true);
@@ -44,8 +45,12 @@ if(isset($_POST['connexion'] )){
             // "pseudo" => "WassilaDors",
             // "img" => "sommeil-enfant-dormir.jpg"
             // ];
+            if($_SESSION['role'] == "admin"){
+                header("Location: ../admin/accueil_admin.php");
+            }else{
+                header("Location: ../accueil.php");
+            }
 
-            header("Location: ../accueil.php");
         }else{
             header("Location: ../connexion.php");
         }

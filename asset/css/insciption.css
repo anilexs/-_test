@@ -27,13 +27,8 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
-nav{
-    background-color: black;
-    border-bottom: 1px solid rgb(0, 149, 255);
-    height: 75px;
-}
 
-form{
+.form{
     background-color: rgba(0, 0, 0, 0.5);
     width: 50%;
     height: 500px;
